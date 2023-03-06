@@ -1,4 +1,45 @@
 this is a test.
+
+
+
+## 版本回退
+
+1. 修改了，但是还没有add, 覆盖本次修改
+
+   ```shell
+   //恢复某个文件,也可以是多个
+   $ git restore 1.md 2.md
+   
+   // 当前目录下所有文件，都恢复原状
+   $ git restore .
+   ```
+
+2. add后，还没有commit, 撤回到add 前一步
+
+   ```shell
+   // 恢复某个文件，也可以是多个
+   $ git restore --staged 1.md 2.md
+   
+   // 当前目录下所有文件，都恢复原状
+   $ git restore --staged .
+   ```
+
+3. commit 后，还没有push,撤回到add 前一步,保留修改的内容
+
+   ```shell
+   $ git reset HEAD^	
+   ```
+
+4. commit 后，还没有push,撤回到未修改的状态，不保留修改的内容
+
+   ```shell
+   $ git reset --hard HEAD^
+   ```
+
+   
+
+
+
 ## 标签管理(tag)
 
 1. 看标签 `git tag`
