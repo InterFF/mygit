@@ -93,3 +93,55 @@ $ git push orgin :v0.1.0
 $ git checkout v0.1.0
 ```
 
+## 设置别名（alias）
+
+1. 新增别名 `git config --global alias.<alias> <command>`
+
+   ``` bash
+   //本仓库适用，如果当前仓库设置别名，会覆盖全局设置，一般本仓库不设置，仅设置全局
+   $ git config alias.st status
+   
+   //全局适用,一般默认设置全局
+   $ git config --global alias.st status
+   
+   //组合命令别名，加单引号
+   $ git config --global alias.last 'log -1'
+   //or 双引号
+   $ git config --global alias.last "log -1"
+   ```
+
+2. 查看别名 `git config alias.name`
+
+   ```bash
+   // 查看所有
+   $ git config --global --list | grep alias
+   
+   // 指定搜索 叫`st`的别名
+   $ git config --global alias.st
+   ```
+
+3. 修改别名
+
+```bash
+// 此处同新增别名，参考1
+```
+
+4. 删除别名
+
+   ```bash
+   // 参考5
+   ```
+
+   
+
+5. 批量编辑 （增删改）
+
+   ```bash
+   //全局
+   $ git config --global -e
+   
+   //本仓库
+   $ git config -e
+   ```
+
+   
