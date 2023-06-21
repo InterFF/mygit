@@ -143,4 +143,56 @@ $ git checkout v0.1.0
    $ git config -e
    ```
 
+   ## 临时保存 (stash)
+   
+   应用场景：当一个分支的开发工作还未完成时，却要切换到其他的分支去。如果什么都不做，那么就会导致本次修改会带到其他分支去，进而影响到其他分支的代码。此时，为了避免这样的事情发生，stash命令就派上用场了。使用stash命令，临时保存此次还没有完成的修改到git栈中，然后切换到其他分支去，完事了再切回来，从git栈中取出刚才保存的内容，继续上次未完的开发。
+   
+   
+   
+   1. 新增（入栈）
+   
+      ```sh
+      //保存本次修改
+      $ git stash
+      
+      //保存本次修改，并添加注释，方便查找
+      $ git stash -m "this is a test"
+      or
+      $ git stash save "this is a test"
+      ```
+   
+   2. 查看
+   
+      ```sh
+      // 查看所有
+      $ git stash list
+      
+      // 查看某一个stash修改的文件有哪些，显示文件名，不加序号n,默认最近一个
+      $ git stash show n
+      
+      // 查看某一个stash修改的哪些文件的哪些内容，跟diff差不多。不加序号n,默认最近一个
+      $ git stash show n -p
+      
+      ```
+   
+   3. 取出
+   
+      ```sh
+      // 取出并删除，出栈用法.指定某一个，不加序号n,默认最近一个
+      $ git stash pop n
+      
+      //取出不删除,搭配drop使用.指定某一个，不加序号n,默认最近一个
+      $ git stash apply n
+      ```
+   
+   4. 删除，搭配apply使用
+   
+      ```sh
+      // 指定某一个，不加序号n,默认最近一个
+      $ git stash drop n
+      
+      //全部删除
+      $ git stash clear
+      ```
+   
    
