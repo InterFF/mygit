@@ -36,7 +36,10 @@ this is a test.
    $ git reset --hard HEAD^
    ```
 
-   
+5. commit 后，已经push,改变远程仓库内容
+   ```shell
+   $ git push -f origin
+   ```
 
 
 
