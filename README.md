@@ -40,6 +40,18 @@ this is a test.
    ```shell
    $ git push -f origin
    ```
+6. commit 很久以后，想要删除之前的某一次提交，后面的提交不动
+   ```shell
+   //反做指定的提交id
+   $ git revert commit_id
+
+   //然后解决冲突,然后提交
+   $ git add .
+
+   $ git commit
+
+   $ git push
+   ```
 
 
 
