@@ -36,9 +36,10 @@ this is a test.
    $ git reset --hard HEAD^
    ```
 
-5. commit 后，已经push,改变远程仓库内容
+5. commit 后，已经push,改变远程仓库内容,先reset本地内容，然后强推到远程
    ```shell
-   $ git push -f origin
+   //此种情况，必须是独有的仓库，也就是说参与者只能是自己，没有其他人参与
+   $ git push -f origin master
    ```
 6. commit 很久以后，想要删除之前的某一次提交，后面的提交不动
    ```shell
