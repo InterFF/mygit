@@ -44,12 +44,12 @@ this is a test.
    ```shell
    //反做指定的提交id
    $ git revert commit_id
-
+   
    //然后解决冲突,然后提交
    $ git add .
-
+   
    $ git commit
-
+   
    $ git push
    ```
 
