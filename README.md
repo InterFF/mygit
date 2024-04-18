@@ -82,7 +82,7 @@ $ git tag v0.2.0
 //以前的
 $ git tag v0.1.0 commid
 
-//-a带注释的,不加-m后果自负
+//-a 附注标签（annotated）,GPG签名并验证，-m 选项指定了一条将会存储在标签中的信息。 如果没有，Git会启动编辑器要求你输入信息
 $ git tag -a v0.1.0 commid -m "release v0.1.0"
 
 //私钥签名，前提安装 gpg
@@ -103,6 +103,9 @@ $ git tag -d v0.1.0
 
 //删除远程
 $ git push orgin :v0.1.0
+
+//or
+$git push origin --delete v0.1.0
 ```
 
 4. 切换到tag版本
