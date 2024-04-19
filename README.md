@@ -9,7 +9,7 @@
 
    ```shell
    //方式一,已存在仓库
-   $ ce respositoryName
+   $ cd respositoryName
    $ git init
    
    //方式二，同级目录，存在，则初始化，不存在，则创建一个
