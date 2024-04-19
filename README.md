@@ -1,6 +1,66 @@
-this is a test.
+不重复造轮子，只是记录简单实用的几个命令。类似词典功能，供日后查询使用。
 
 
+
+
+## 创建仓库
+
+1. 本地自建一个git 仓库
+
+   ```shell
+   //方式一,已存在仓库
+   $ ce respositoryName
+   $ git init
+   
+   //方式二，同级目录，存在，则初始化，不存在，则创建一个
+   $ git init respositoryName
+   
+   ```
+
+2. 从远程克隆
+
+   ```shell
+   //方式三，copy别人的仓库
+   $ git clone <url>
+   
+   //or 重新命名
+   $ git clone <url> newName
+   ```
+
+## 远程仓库(remote)
+
+1. 新增远程仓库
+
+   ```shell
+   //本地有仓库,shortname一般是origin,可以自定义
+   $ git remote add <shortname> <url>
+   ```
+
+2. 查看远程仓库
+
+   ```shell
+   //列出所有
+   $ git remote
+   
+   //查看某一个
+   $ git remote show <shortname>
+   ```
+
+3. 修改远程仓库
+
+   ```shell
+   //重命名
+   $ git remote rename shortName newShortName
+   ```
+
+4. 删除远程仓库
+
+   ```shell
+   //解绑
+   $ git remote remove shortName
+   ```
+
+   
 
 ## 版本回退
 
