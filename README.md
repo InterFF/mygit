@@ -29,7 +29,7 @@
 
 ## 远程仓库(remote)
 
-1. 新增远程仓库
+1. 关联远程仓库
 
    ```shell
    //本地有仓库,shortname一般是origin,可以自定义
@@ -41,19 +41,22 @@
    ```shell
    //列出所有
    $ git remote
+
+   //or 更详细
+   $ git remote -vv
    
    //查看某一个
    $ git remote show <shortname>
    ```
 
-3. 修改远程仓库
+3. 重命名远程仓库shortname
 
    ```shell
-   //重命名
+   //重命名,本质是把远程仓库对应的本地的索引重新命名
    $ git remote rename shortName newShortName
    ```
 
-4. 删除远程仓库
+4. 解绑远程仓库
 
    ```shell
    //解绑
