@@ -43,7 +43,7 @@
    $ git remote
 
    //or 更详细
-   $ git remote -vv
+   $ git remote -v
    
    //查看某一个
    $ git remote show <shortname>
@@ -125,63 +125,63 @@
 
 1. 看标签 `git tag`
 
-```shell
-//列出标签
-$ git tag
+    ```shell
+    //列出标签
+    $ git tag
 
-//搜索标签
-$git tag -l "v0.2.*"
+    //搜索标签
+    $git tag -l "v0.2.*"
 
-//查看标签
-$git show v0.1.0
-```
+    //查看标签
+    $git show v0.1.0
+    ```
 
 2. 新增标签 `git tag <tag-name>`
 
-```shell
-//新增当前head
-$ git tag v0.2.0
+    ```shell
+    //新增当前head
+    $ git tag v0.2.0
 
-//以前的
-$ git tag v0.1.0 commid
+    //以前的
+    $ git tag v0.1.0 commid
 
-//-a 附注标签（annotated）,GPG签名并验证，-m 选项指定了一条将会存储在标签中的信息。 如果没有，Git会启动编辑器要求你输入信息
-$ git tag -a v0.1.0 commid -m "release v0.1.0"
+    //-a 附注标签（annotated）,GPG签名并验证，-m 选项指定了一条将会存储在标签中的	信息。 如果没有，Git会启动编辑器要求你输入信息
+    $ git tag -a v0.1.0 commid -m "release v0.1.0"
 
-//私钥签名，前提安装 gpg
-$ git tag -s v0.1.0 commid -m "signed release v0.1.0"
+    //私钥签名，前提安装 gpg
+    $ git tag -s v0.1.0 commid -m "signed release v0.1.0"
 
-//远程提交
-$ git push origin v0.2.0
+    //远程提交
+    $ git push origin v0.2.0
 
-//远程提交全部
-$ git push origin --tags
-```
+    //远程提交全部
+    $ git push origin --tags
+    ```
 
 3. 删除标签 `git tag -d v0.1.0`
 
-```shell
-//删除本地
-$ git tag -d v0.1.0
+    ```shell
+    //删除本地
+    $ git tag -d v0.1.0
 
-//删除远程
-$ git push orgin :v0.1.0
+    //删除远程
+    $ git push orgin :v0.1.0
 
-//or
-$git push origin --delete v0.1.0
-```
+    //or
+    $git push origin --delete v0.1.0
+    ```
 
 4. 切换到tag版本
 
-```shell
-$ git checkout v0.1.0
-```
+    ```shell
+    $ git checkout v0.1.0
+    ```
 
 ## 设置别名（alias）
 
 1. 新增别名 `git config --global alias.<alias> <command>`
 
-   ``` bash
+   ``` shell
    //本仓库适用，如果当前仓库设置别名，会覆盖全局设置，一般本仓库不设置，仅设置全局
    $ git config alias.st status
    
@@ -196,7 +196,7 @@ $ git checkout v0.1.0
 
 2. 查看别名 `git config alias.name`
 
-   ```bash
+   ```shell
    // 查看所有
    $ git config --global --list | grep alias
    
@@ -206,20 +206,20 @@ $ git checkout v0.1.0
 
 3. 修改别名
 
-   ```bash
+   ```shell
    // 此处同新增别名，参考1
    ```
 
 4. 删除别名
 
-   ```bash
+   ```shell
    // 参考5
    ```
 
 
 5. 批量编辑 （增删改）
 
-   ```bash
+   ```shell
    //全局
    $ git config --global -e
    
@@ -234,7 +234,7 @@ $ git checkout v0.1.0
 
 1. 新增（入栈）
 
-  ```sh
+  ```shell
   //保存本次修改
   $ git stash
 
@@ -246,7 +246,7 @@ $ git checkout v0.1.0
 
 2. 查看
 
-  ```sh
+  ```shell
   // 查看所有
   $ git stash list
 
@@ -260,7 +260,7 @@ $ git checkout v0.1.0
 
 3. 取出
 
-  ```sh
+  ```shell
   // 取出并删除，出栈用法.指定某一个，不加序号n,默认最近一个
   $ git stash pop n
 
@@ -270,7 +270,7 @@ $ git checkout v0.1.0
 
 4. 删除，搭配apply使用
 
-  ```sh
+  ```shell
   // 指定某一个，不加序号n,默认最近一个
   $ git stash drop n
 
@@ -278,4 +278,51 @@ $ git checkout v0.1.0
   $ git stash clear
   ```
 
+   ## 分支管理（branch）
+
+1. 新增
+
+   ```shell
+   //新增
+   $ git branch branchname
    
+   //新增并且切换到新的分支
+   $ git checkout -b branchname
+   ```
+
+2. 查看
+
+   ```shell
+   //查看
+   $ git branch
+   
+   //筛选 名字
+   $ git branch -l "feat*"
+   
+   //筛选 已合并
+   $ git branch --merged
+   
+   //筛选 未合并
+   $ git branch --no-merged
+   
+   ```
+
+3. 修改
+
+    ```shell
+    //newBranch存在不覆盖
+    $ git branch -m oldBranch newBranch
+    
+    //newBranch存在覆盖
+    $ git branch -M oldBranch newBranch
+    ```
+4. 删除
+
+    ```shell
+    //仅仅适用于已经合并的分支
+    $ git branch -d branchname
+    
+    //未合并的使用此命令
+    $ git branch -D branchName
+    ```
+
