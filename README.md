@@ -326,3 +326,30 @@
     $ git branch -D branchName
     ```
 
+## 远程仓库别名和分支名
+
+“origin” 并无特殊含义，远程仓库名字 “origin” 与分支名字 “master” 一样，在 Git 中并没有任何特别的含义一样。 
+
+同时 “master” 是当你运行 git init 时默认的起始分支名字，原因仅仅是它的广泛使用， 
+
+“origin” 是当你运行 git clone 时默认的远程仓库名字。下面讨论怎么修改它们。
+
+
+
+1. 分支的别名修改
+
+```shell
+//参考分支管理 3.修改
+$ git branch -M master main
+```
+
+2. 远程仓库别名的修改
+
+```shell
+//初始命名
+$ git clone -o shortname <url>
+
+//事后修改
+$ git remote rename oldshortname newshortname
+```
+
