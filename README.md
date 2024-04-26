@@ -67,7 +67,9 @@
 
 ## 版本回退
 
-1. 修改了，但是还没有add, 覆盖本次修改
+![image-20240425140535294](img\file_st.png)
+
+1. 修改了，但是还没有add, 覆盖本次修改【unmodified】or 【untracked】
 
    ```shell
    //恢复某个文件,也可以是多个
@@ -77,7 +79,7 @@
    $ git restore .
    ```
 
-2. add后，还没有commit, 撤回到add 前一步
+2. add后，还没有commit, 撤回到add 前一步【unstaged but modified】
 
    ```shell
    // 恢复某个文件，也可以是多个
@@ -87,26 +89,33 @@
    $ git restore --staged .
    ```
 
-3. commit 后，还没有push,撤回到add 前一步,保留修改的内容
+3. commit 后，还没有push,撤回到commit前一步,即回到【staged】
+
+   ```shell
+   $ git reset --soft HEAD^	
+   ```
+
+4. commit 后，还没有push,撤回到add 前一步,保留修改的内容【unstaged but modified】
 
    ```shell
    $ git reset HEAD^	
    ```
 
-4. commit 后，还没有push,撤回到未修改的状态，不保留修改的内容
+5. commit 后，还没有push,撤回到未修改的状态，不保留修改的内容【unmodified】or 【untracked】
 
    ```shell
    $ git reset --hard HEAD^
    ```
 
-5. 以上只是针对本地仓库，对于有远程仓库的，commit 后，已经push,一同改变远程仓库和本地的内容，使用revert命令
+6. 以上只是针对本地仓库，对于有远程仓库的，commit 后，已经push,一同改变远程仓库和本地的内容，使用revert命令
    ```shell
    //撤销最近一次变更，就是这么简单，本地的也一并撤销了
    $ git revert HEAD
    $ git push origin master
    
    ```
-6. commit 很久以后，想要删除之前的某一次提交，后面的提交不动
+
+7. commit 很久以后，想要删除之前的某一次提交，后面的提交不动
    ```shell
    //反做指定的提交id
    $ git revert commit_id
