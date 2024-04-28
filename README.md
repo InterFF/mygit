@@ -362,3 +362,21 @@ $ git clone -o shortname <url>
 $ git remote rename oldshortname newshortname
 ```
 
+## 搜索代码
+
+Git 提供了一个 grep 命令，你可以很方便地从提交历史、工作目录、甚至索引中查找一个字符串或者正则表达
+式。
+
+```shell
+//搜索包含string的文件
+$ git grep string
+
+//显示行号
+$ git grep -n string
+
+//显示山下文
+$ git grep -p string
+```
+
+
+
