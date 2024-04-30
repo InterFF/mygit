@@ -67,7 +67,7 @@
 
 ## 版本回退
 
-![image-20240425140535294](img/file_st.png)
+![image-20240425140535294](./img/file_st.png)
 
 1. 修改了，但是还没有add, 覆盖本次修改【unmodified】or 【untracked】
 
