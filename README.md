@@ -1,6 +1,11 @@
 > 不重复造轮子，只是记录简单实用的几个命令。类似词典功能，供日后查询使用。
 
+TODO:dart:
 
+- [ ] 远程分支
+- [ ] diff
+- [ ] log
+- [ ] work flow
 
 
 ## 创建仓库
@@ -29,6 +34,10 @@
 
 ## 远程仓库(remote)
 
+一个远程仓库代表一台主机，一个仓库下可以有多个分支。
+
+
+
 1. 关联远程仓库
 
    ```shell
@@ -45,7 +54,7 @@
    //or 更详细
    $ git remote -v
    
-   //查看某一个
+   //查看某一个，可以看到此远程仓库下的所有分支
    $ git remote show <shortname>
    ```
 
@@ -63,7 +72,24 @@
    $ git remote remove shortName
    ```
 
+5. 提交到远程仓库
+
+   ```shell
+   //第一次提交
+   $ git push -u origin master
    
+   //之后的提交
+   $ git push
+   ```
+   
+   其实，执行添加了-u 参数的命令 git push -u origin master就相当于是执行了
+
+   git push origin master 和
+   git branch --set-upstream master origin/master。
+   
+   所以，在进行推送代码到远端分支，且之后希望持续向该远程分支推送，则可以在推送命令中添加 -u 参数，简化之后的推送命令输入。
+
+   简单来说，带上`-u` 参数其实就相当于记录了push到远端分支的默认值，这样当下次我们还想要继续push的这个远端分支的时候推送命令就可以简写成`git push`即可。
 
 ## 版本回退
 
@@ -374,6 +400,10 @@ $ git clone -o shortname <url>
 //事后修改
 $ git remote rename oldshortname newshortname
 ```
+
+## 远程分支
+
+
 
 ## 搜索代码
 
