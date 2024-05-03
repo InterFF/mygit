@@ -6,6 +6,7 @@ TODO:dart:
 - [ ] diff
 - [ ] log
 - [ ] work flow
+- [ ] ref doc
 
 
 ## 创建仓库
@@ -300,49 +301,49 @@ TODO:dart:
 
 1. 新增（入栈）
 
-  ```shell
-  //保存本次修改
-  $ git stash
+    ```shell
+    //保存本次修改
+    $ git stash
 
-  //保存本次修改，并添加注释，方便查找
-  $ git stash -m "this is a test"
-  or
-  $ git stash save "this is a test"
-  ```
+    //保存本次修改，并添加注释，方便查找
+    $ git stash -m "this is a test"
+    or
+    $ git stash save "this is a test"
+    ```
 
 2. 查看
 
-  ```shell
-  // 查看所有
-  $ git stash list
+    ```shell
+    // 查看所有
+    $ git stash list
 
-  // 查看某一个stash修改的文件有哪些，显示文件名，不加序号n,默认最近一个
-  $ git stash show n
+    // 查看某一个stash修改的文件有哪些，显示文件名，不加序号n,默认最近一个
+    $ git stash show n
 
-  // 查看某一个stash修改的哪些文件的哪些内容，跟diff差不多。不加序号n,默认最近一个
-  $ git stash show n -p
+    // 查看某一个stash修改的哪些文件的哪些内容，跟diff差不多。不加序号n,默认最近一个
+    $ git stash show n -p
 
-  ```
+    ```
 
 3. 取出
 
-  ```shell
-  // 取出并删除，出栈用法.指定某一个，不加序号n,默认最近一个
-  $ git stash pop n
+    ```shell
+    // 取出并删除，出栈用法.指定某一个，不加序号n,默认最近一个
+    $ git stash pop n
 
-  //取出不删除,搭配drop使用.指定某一个，不加序号n,默认最近一个
-  $ git stash apply n
-  ```
+    //取出不删除,搭配drop使用.指定某一个，不加序号n,默认最近一个
+    $ git stash apply n
+    ```
 
 4. 删除，搭配apply使用
 
-  ```shell
-  // 指定某一个，不加序号n,默认最近一个
-  $ git stash drop n
-
-  //全部删除
-  $ git stash clear
-  ```
+    ```shell
+    // 指定某一个，不加序号n,默认最近一个
+    $ git stash drop n
+    
+    //全部删除
+    $ git stash clear
+    ```
 
 ## 分支管理（branch）
 
@@ -464,8 +465,8 @@ TODO:dart:
 
 ## 搜索代码
 
-Git 提供了一个 grep 命令，你可以很方便地从提交历史、工作目录、甚至索引中查找一个字符串或者正则表达
-式。
+Git 提供了一个 grep 命令，你可以很方便地从提交历史、工作目录、甚至索引中查找一个字符串或者正则表达式。
+
 
 ```shell
 //搜索包含string的文件
