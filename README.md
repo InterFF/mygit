@@ -2,7 +2,7 @@
 
 TODO:dart:
 
-- [ ] 远程分支
+- [x] 远程分支
 - [ ] diff
 - [ ] log
 - [ ] work flow
@@ -50,7 +50,7 @@ TODO:dart:
    ```shell
    //列出所有
    $ git remote
-
+   
    //or 更详细
    $ git remote -v
    
@@ -81,15 +81,33 @@ TODO:dart:
    //之后的提交
    $ git push
    ```
-   
+
    其实，执行添加了-u 参数的命令 git push -u origin master就相当于是执行了
 
    git push origin master 和
    git branch --set-upstream master origin/master。
-   
+
    所以，在进行推送代码到远端分支，且之后希望持续向该远程分支推送，则可以在推送命令中添加 -u 参数，简化之后的推送命令输入。
 
    简单来说，带上`-u` 参数其实就相当于记录了push到远端分支的默认值，这样当下次我们还想要继续push的这个远端分支的时候推送命令就可以简写成`git push`即可。
+
+6. 从远程仓库抓取
+
+   ```shell
+   //origin是别名， 必须注意 git fetch 命令只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作
+   $ git fetch origin
+   
+   //比较
+   $ git diff origin/master
+   
+   //合并到本地分支
+   $ git merge origin/master
+   
+   //or 将数据下载到你的本地仓库并且自动合并
+   $ git pull origin master
+   ```
+
+   
 
 ## 版本回退
 
@@ -372,6 +390,9 @@ TODO:dart:
     
     //未合并的使用此命令
     $ git branch -D branchName
+    
+    //删除远程分支
+    $ git push origin --delete branchname
     ```
 
 ## 远程仓库别名和分支名
@@ -386,22 +407,58 @@ TODO:dart:
 
 1. 分支的别名修改
 
-```shell
-//参考分支管理 3.修改
-$ git branch -M master main
-```
+    ```shell
+    //参考分支管理 3.修改
+    $ git branch -M master main
+    ```
 
 2. 远程仓库别名的修改
 
-```shell
-//初始命名
-$ git clone -o shortname <url>
+    ```shell
+    //初始命名
+    $ git clone -o shortname <url>
+    
+    //事后修改
+    $ git remote rename oldshortname newshortname
+    ```
 
-//事后修改
-$ git remote rename oldshortname newshortname
-```
+## 跟踪分支
 
-## 远程分支
+如果在一个跟踪分支上输入 git pull，Git 能自动地识别去哪个服务器上抓取、合并到哪个分支。这就要得益于跟踪分支。
+
+1. 查看
+
+    ```shell
+    //查看设置的所有跟踪分支
+    $ git branch -vv
+
+    //统计最新的
+    $ git fetch --all;git branch -vv
+    ```
+
+2. 创建远程跟踪分支
+
+   ```shell
+   //1.创建一个本地serverfix分支，并且跟踪远程分支serverfix, 别名origin
+   $ git checkout --track origin/serverfix
+   
+   //or 设置本地分支名 localbranchname
+   $ git checkout -b <localbranchname> <remote>/<remotebranchname>
+   ```
+
+3. 修改
+
+   ```shell
+   //重新指向origin/serverfix
+   $ git branch -u origin/serverfix
+   ```
+
+4. 删除
+
+    ```shell
+    //要删除当前分支的上游
+    $ git branch --unset-upstream
+    ```
 
 
 
