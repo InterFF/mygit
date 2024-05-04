@@ -6,7 +6,7 @@ TODO:dart:
 - [ ] diff
 - [ ] log
 - [ ] work flow
-- [ ] ref doc
+- [x] ref doc
 
 
 ## 创建仓库
@@ -481,3 +481,6 @@ $ git grep -p string
 
 
 
+---
+
+官方文档 [progit](https://git-scm.com/book/en/v2)：权威，深刻
