@@ -484,3 +484,6 @@ $ git grep -p string
 ---
 
 官方文档 [progit](https://git-scm.com/book/en/v2)：权威，深刻
+
+入门教程[尚硅谷Git教程](https://www.bilibili.com/video/BV1vy4y1s7k6): 入门级，简单实用
+
