@@ -4,8 +4,7 @@ TODO:dart:
 
 - [x] 远程分支
 - [x] diff
-- [ ] log
-- [ ] work flow
+- [x] log
 - [x] ref doc
 
 
@@ -506,6 +505,35 @@ $ git diff --stat HEAD~ HEAD src
 //文件
 $ git diff --stat HEAD~ HEAD src/test.txt
 ```
+
+## 日志（log）
+
+1. 提交日志
+
+记录提交版本，分支变迁，提供详细的日志信息，用来查询
+```shell
+//直接查看
+$ git log
+
+//最近n条
+$ git log -n
+
+//单行显示
+$ git log --online
+
+//树图
+$ git log --graph
+
+//或者自定义
+$ log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+```
+2. 命令执行日志
+
+用来“时空穿梭”
+```shell
+$ git reflog
+```
+
 ---
 
 官方文档 [progit](https://git-scm.com/book/en/v2)：权威，深刻
