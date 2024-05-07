@@ -3,7 +3,7 @@
 TODO:dart:
 
 - [x] 远程分支
-- [ ] diff
+- [x] diff
 - [ ] log
 - [ ] work flow
 - [x] ref doc
@@ -479,8 +479,33 @@ $ git grep -n string
 $ git grep -p string
 ```
 
+## 比较（diff）
 
+```shell
+//比较「暂存区」与「工作区」之间的差异。
+$ git diff
 
+//比较「给定提交 ID」与「工作区」的差异
+$ git diff commitId
+
+//比较「暂存区」与「给定提交 ID」的差异,如果省略 commit，那么，就是默认指 HEAD
+$ git diff --cached commit
+
+//比较指定的两次提交 「commit1」与 「commit2」的差异,`commit1=a(old),commit2=b(new)`
+$ git diff commit1 commit2
+```
+
+高级用法
+```shell
+//显示有多少行发生变化，简洁的展示差异,不显示具体内容
+$ git diff --stat
+
+//限制路径-目录
+$ git diff --stat HEAD~ HEAD src
+
+//文件
+$ git diff --stat HEAD~ HEAD src/test.txt
+```
 ---
 
 官方文档 [progit](https://git-scm.com/book/en/v2)：权威，深刻
