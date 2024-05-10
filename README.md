@@ -504,6 +504,12 @@ $ git diff --stat HEAD~ HEAD src
 
 //文件
 $ git diff --stat HEAD~ HEAD src/test.txt
+
+//打补丁
+$ git diff commit1  commit2 > patch
+
+//应用补丁
+$ git apply patch
 ```
 
 ## 日志（log）
