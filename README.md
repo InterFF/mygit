@@ -547,3 +547,5 @@ $ git reflog
 入门教程[尚硅谷Git教程](https://www.bilibili.com/video/BV1vy4y1s7k6): 入门级，简单实用
 
 入门神器[图形教程](https://learngitbranching.js.org/?locale=zh_CN)：了解git原理，简单，明了，小白必看
+
+提交错误的解决办法 [Oh Shit, Git!](https://ohshitgit.com/)：关键时刻能救命
