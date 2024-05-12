@@ -549,3 +549,4 @@ $ git reflog
 入门神器[图形教程](https://learngitbranching.js.org/?locale=zh_CN)：了解git原理，简单，明了，小白必看
 
 提交错误的解决办法 [Oh Shit, Git!](https://ohshitgit.com/)：关键时刻能救命
+[如何写好 Commit Message](https://chris.beams.io/posts/git-commit/) : 写出高可读的提交日志
