@@ -532,6 +532,9 @@ $ git log --graph
 
 //或者自定义
 $ log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+//查看每次提交的日志的补丁
+$ git log -p
 ```
 2. 命令执行日志
 
