@@ -553,3 +553,5 @@ $ git reflog
 
 提交错误的解决办法 [Oh Shit, Git!](https://ohshitgit.com/)：关键时刻能救命
 [如何写好 Commit Message](https://chris.beams.io/posts/git-commit/) : 写出高可读的提交日志
+
+[How to explain git in simple words](https://smusamashah.github.io/blog/2017/10/14/explain-git-in-simple-words)：用通俗易懂的语言解释git
