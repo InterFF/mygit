@@ -349,11 +349,11 @@ TODO:dart:
 1. 新增
 
    ```shell
-   //新增
-   $ git branch branchname
+   //新增,若无commitId，则默认基于当前分支
+   $ git branch branchname commitId
    
-   //新增并且切换到新的分支
-   $ git checkout -b branchname
+   //新增并且切换到新的分支,若无commitId，则默认基于当前分支
+   $ git checkout -b branchname commitId
    ```
 
 2. 查看
