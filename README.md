@@ -521,6 +521,9 @@ $ git apply patch
 //直接查看
 $ git log
 
+//所有分支
+$ git log --all
+
 //最近n条
 $ git log -n
 
