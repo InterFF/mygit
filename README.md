@@ -7,6 +7,10 @@ TODO:dart:
 - [x] log
 - [x] ref doc
 
+## About git Version
+   ```shell
+   $ git --version
+   ```
 
 ## 创建仓库
 
