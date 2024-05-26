@@ -550,6 +550,17 @@ $ git log -p
 $ git reflog
 ```
 
+## Credential Storage
+
+```shell
+// cache for 15 mins
+$ git config --global credential.helper cache
+
+// --timeout n ,unit second
+$ git config --global credential.helper cache --timeout 1000
+
+// --file [path],helper whith a custom file name
+$ git config --global credential.helper 'store --file ~/.my-credential'
 ---
 
 官方文档 [progit](https://git-scm.com/book/en/v2)：权威，深刻
