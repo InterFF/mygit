@@ -431,7 +431,8 @@ TODO:dart:
     ```shell
     //查看设置的所有跟踪分支
     $ git branch -vv
-
+    
+    
     //统计最新的
     $ git fetch --all;git branch -vv
     ```
@@ -533,7 +534,7 @@ $ git log --graph
 //或者自定义
 $ log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
-//查看每次提交的日志的补丁
+//查看每次提交的日志的补丁，跟diff差不多
 $ git log -p
 ```
 2. 命令执行日志
