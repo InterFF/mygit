@@ -2,10 +2,6 @@
 
 TODO:dart:
 
-- [x] 远程分支
-- [x] diff
-- [x] log
-- [x] ref doc
 
 ## About git Version
    ```shell
