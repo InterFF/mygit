@@ -425,6 +425,15 @@ TODO:dart:
     $ git remote rename oldshortname newshortname
     ```
 
+3. 远程仓库新建分支ft_newbranch
+
+   ```shell
+   //本地有一个分支，远程看不到，那么将本地分支添加到远程仓库就能看到了
+   $ git push origin ft_newbranch
+   ```
+
+   
+
 ## 跟踪分支
 
 如果在一个跟踪分支上输入 git pull，Git 能自动地识别去哪个服务器上抓取、合并到哪个分支。这就要得益于跟踪分支。
