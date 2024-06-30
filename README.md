@@ -503,6 +503,8 @@ $ git diff commitId
 
 //比较「暂存区」与「给定提交 ID」的差异,如果省略 commit，那么，就是默认指 HEAD
 $ git diff --cached commit
+or
+$ git diff --staged commit
 
 //比较指定的两次提交 「commit1」与 「commit2」的差异,`commit1=a(old),commit2=b(new)`
 $ git diff commit1 commit2
