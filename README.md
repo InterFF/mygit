@@ -4,6 +4,10 @@ TODO:dart:
 - [ ] 合并代码技巧
 - [ ] 提交代码技巧
 
+
+
+# 命令
+
 ## About git Version
    ```shell
    $ git --version
@@ -31,6 +35,9 @@ TODO:dart:
    
    //or 重新命名
    $ git clone <url> newName
+   
+   //clone 名字叫dev的远程分支（非默认）
+   $ git clone -b dev <url>
    ```
 
 ## 远程仓库(remote)
@@ -574,6 +581,34 @@ $ git config --global credential.helper cache --timeout 1000
 // --file [path],helper whith a custom file name
 $ git config --global credential.helper 'store --file ~/.my-credential'
 ```
+
+# 技巧
+
+1. 刚提交了代码，发现问题没完全解决，再次修改，针对的是同一个问题，不想要产生2条提交记录，怎么办？
+
+   ```shell
+   $ git add .
+   $ git commit --amend --no-edit
+   ```
+
+   
+
+2. 正在A分支上开发，还没有提交，功能开发了一半。突然来了一个紧急任务，要切换到B分支，此时如果切换分支，A分支上修改的代码也会同步过去，想要在未修改的分支上进行开发，并且不想丢弃开发一半的功能，怎么搞？
+
+   ```shell
+   //A分支暂存起来，
+   $ git stash
+   
+   //切换到其他分支
+   
+   //再切换回来A分支,就可以继续之前中断的动作了
+   $ git stash pop
+   
+   ```
+
+   
+
+3. other
 
 
 ------
