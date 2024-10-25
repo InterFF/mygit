@@ -608,7 +608,34 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
 
    
 
-3. other
+3. 我们本地的数据库和测试环境的数据库配置是不一样的，但是在项目开发中每次提交过程中忽略数据库配置文件。怎么做呢？
+
+   1. 新增忽略文件
+
+      ```bash
+      //这里忽略READMD.md文件
+      $ git update-index --assume-unchanged README.md 
+      ```
+
+   2. 查看被忽略的文件
+
+      ```bash
+      //查看
+      $ git ls-files -v | grep '^h\ '
+      h README.md //结果都是以h开头的
+      ```
+
+   3. 恢复跟踪
+
+      ```bash
+      //恢复跟踪
+      $ git update-index --no-assume-unchanged   README.md  //恢复跟踪
+      
+      //恢复所有的跟踪
+      $ git ls-files -v | grep '^h' | awk '{print $2}' |xargs git update-index --no-assume-unchanged  
+      ```
+
+4. other
 
 
 ------
@@ -624,3 +651,5 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
 [如何写好 Commit Message](https://chris.beams.io/posts/git-commit/) : 写出高可读的提交日志
 
 [How to explain git in simple words](https://smusamashah.github.io/blog/2017/10/14/explain-git-in-simple-words)：用通俗易懂的语言解释git
+
+[Git命令git update-index --assume-unchanged，忽略不想提交的文件（忽略跟踪）](https://www.cnblogs.com/wt645631686/p/10007328.html)
