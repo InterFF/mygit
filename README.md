@@ -621,7 +621,7 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
 
       ```bash
       //查看
-      $ git ls-files -v | grep '^h\ '
+      $ git ls-files -v | grep '^h'
       h README.md //结果都是以h开头的
       ```
 
