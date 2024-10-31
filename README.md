@@ -84,6 +84,9 @@ TODO:dart:
 
    ```shell
    //第一次提交
+   //语法：git push <远程主机别名> <本地分支名>:<远程分支名>
+   $ git push -u origin master:master
+   //如果本地分支名和远程分支名相同，可以省略冒号和远程分支名 ，语法：git push <远程主机别名> <本地分支名>
    $ git push -u origin master
    
    //之后的提交
@@ -638,6 +641,86 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
 4. other
 
 
+
+# 提交流程
+
+对于多人协作开发项目，可遵守的开发流程有N种。
+
+## 一般协作模式
+
+1. clone远程(origin)分支到本地，假如远程分支为master
+
+   ```bash
+   //参考第一节 远程仓库
+   $ git clone <url>
+   ```
+
+2. 建立一个用于开发的分支dev，在dev上开发
+
+   ```bash
+   $ git checkout -b dev
+   ```
+
+3. dev提交代码
+
+   ```bash
+   $ git add .
+   $ git commit -m 'first commit'
+   ```
+
+4. 切换master，拉取远程代码
+
+   ```bash
+   $ git co master
+   $ git fetch origin
+   
+   //也可查看改动
+   $ git diff origin/master --stat
+   ```
+
+5. 合并远程
+
+   ```bash
+   $ git merge origin/master
+   //若有冲突，则解决，提交，然后进入下一步
+   //若无冲突，则直接进入下一步
+   ```
+
+6. 合并dev
+
+   ```bash
+   //当前还在master分支，可比较本地修改合远程差异
+   $ git diff dev --stat
+   
+   //合并
+   $ git merge dev
+   //若有冲突，则解决，提交，然后进入下一步
+   //若无冲突，则直接进入下一步
+   ```
+
+7. 推送远程
+
+   ```bash
+   //第一次推送
+   $ git push -u origin master
+   
+   //以后推送
+   $ git push origin master
+   ```
+
+8. 切换dev，合并master
+
+   ```bash
+   $ git checkout dev
+   //master已经是解决完冲突的，所以可以放心合并
+   $ git merge master
+   ```
+
+9. 重复步骤2
+
+
+
+
 ------
 
 官方文档 [progit](https://git-scm.com/book/en/v2)：权威，深刻
@@ -653,3 +736,5 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
 [How to explain git in simple words](https://smusamashah.github.io/blog/2017/10/14/explain-git-in-simple-words)：用通俗易懂的语言解释git
 
 [Git命令git update-index --assume-unchanged，忽略不想提交的文件（忽略跟踪）](https://www.cnblogs.com/wt645631686/p/10007328.html)
+
+[Git指定文件不更新](https://blog.csdn.net/LittleGlassHeart/article/details/120459341)
