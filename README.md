@@ -638,8 +638,26 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
       $ git ls-files -v | grep '^h' | awk '{print $2}' |xargs git update-index --no-assume-unchanged  
       ```
 
-4. other
+4.  多账号切换开发，假设你有两个账号，平时一直都是用的主账号，突然有一个项目要用一个临时账号test，该怎么做？
+	两步达到目的，第一：
+	修改本项目的user和email，也就是local级别的配置，位于项目根目录下 .git/config 中。此处commit有用
+	```bash
 
+	[user]
+	name = test
+	email = test@mail.com
+
+	```
+
+	第二步，修改远程url,此处push有用
+
+	```bash
+		[remote "origin"]
+		url = http://test:123456@git.github.com/test/myproject.git
+		fetch = +refs/heads/*:refs/remotes/origin/*
+	```
+
+	以上只针对https方式有用。
 
 
 # 提交流程
