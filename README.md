@@ -368,6 +368,12 @@ TODO:dart:
    
    //新增并且切换到新的分支,若无commitId，则默认基于当前分支
    $ git checkout -b branchname commitId
+   
+   //拉取远程分支并创建本地分支，在本地新建分支localbranchname，并自动切换到该本地分支localbranchname，建立的本地分支会和远程分支建立映射关系
+   $ git checkout -b localbranchname remotebranchname
+   
+   //举例子
+   $ git checkout -b de origin/dev
    ```
 
 2. 查看
@@ -638,26 +644,35 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
       $ git ls-files -v | grep '^h' | awk '{print $2}' |xargs git update-index --no-assume-unchanged  
       ```
 
-4.  多账号切换开发，假设你有两个账号，平时一直都是用的主账号，突然有一个项目要用一个临时账号test，该怎么做？
-	两步达到目的，第一：
-	修改本项目的user和email，也就是local级别的配置，位于项目根目录下 .git/config 中。此处commit有用
-	```bash
+4. 多账号切换开发，假设你有两个账号，平时一直都是用的主账号，突然有一个项目要用一个临时账号test，该怎么做？
+   两步达到目的，第一：
+   修改本项目的user和email，也就是local级别的配置，位于项目根目录下 .git/config 中。此处commit有用
+   ```bash
+   
+   [user]
+   name = test
+   email = test@mail.com
+   
+   ```
 
-	[user]
-	name = test
-	email = test@mail.com
+   第二步，修改远程url,此处push有用
 
-	```
+   ```bash
+   	[remote "origin"]
+   	url = http://test:123456@git.github.com/test/myproject.git
+   	fetch = +refs/heads/*:refs/remotes/origin/*
+   ```
 
-	第二步，修改远程url,此处push有用
+   以上只针对https方式有用。
 
-	```bash
-		[remote "origin"]
-		url = http://test:123456@git.github.com/test/myproject.git
-		fetch = +refs/heads/*:refs/remotes/origin/*
-	```
+5. 远程分支默认是master, 你clone 远程仓库代码后，发现不是你想要的，你想要dev分支的代码，怎么办？
 
-	以上只针对https方式有用。
+   ```bash
+   // 参考分支管理，新建分支一节
+   $ git checkout -b dev origin/dev
+   ```
+
+   
 
 
 # 提交流程
