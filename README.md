@@ -672,6 +672,13 @@ $ git config --global credential.helper 'store --file ~/.my-credential'
    $ git checkout -b dev origin/dev
    ```
 
+6. 验证SSH是否可用?
+
+   ```bash
+   $ ssh -T git@github.com
+   Hi InterFF! You've successfully authenticated, but GitHub does not provide shell access. //返回这个信息就证明连接正常
+   ```
+
    
 
 
