@@ -68,18 +68,21 @@ TODO:dart:
    $ git remote show <shortname>
    ```
 
-3. 重命名远程仓库shortname
+3. 修改/重命名远程仓库shortname
 
    ```shell
    //重命名,本质是把远程仓库对应的本地的索引重新命名
-   $ git remote rename shortName newShortName
+   $ git remote rename <shortname> <newShortName>
+   
+   //修改远程仓库URL信息
+   $ git remote set-url <shortname> <url>
    ```
 
 4. 解绑远程仓库
 
    ```shell
    //解绑
-   $ git remote remove shortName
+   $ git remote remove <shortName>
    ```
 
 5. 提交到远程仓库
@@ -103,6 +106,8 @@ TODO:dart:
    所以，在进行推送代码到远端分支，且之后希望持续向该远程分支推送，则可以在推送命令中添加 -u 参数，简化之后的推送命令输入。
 
    简单来说，带上`-u` 参数其实就相当于记录了push到远端分支的默认值，这样当下次我们还想要继续push的这个远端分支的时候推送命令就可以简写成`git push`即可。
+
+   
 
 6. 从远程仓库抓取
 
